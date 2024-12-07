@@ -3,8 +3,8 @@
 	"version": "1.0.0",
 	"main": "dist/server/index.js",
 	"scripts": {
-		"build": "tsc",
-		"start": "node dist/server/index.js",
+		"build": "rimraf ./dist && tsc",
+		"start": "node ./dist/server/index.js",
 		"dev": "nodemon ./src/server/index.ts"
 	},
 	"keywords": [],

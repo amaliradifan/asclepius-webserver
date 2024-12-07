@@ -7,7 +7,7 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app: Express = express();
-const PORT: number = parseInt(process.env.PORT || "3000", 10);
+const PORT: number = parseInt(process.env.PORT || "8080", 10);
 
 app.use(cors());
 app.use(express.urlencoded({ extended: true }));
@@ -18,7 +18,7 @@ async function main(): Promise<void> {
         const model = await loadModel(); 
         app.locals.model = model; 
 
-        app.listen(PORT, '0.0.0.0', (): void => {
+        app.listen(PORT, (): void => {
             console.log(`⚡️ [SERVER]: Server running at localhost:${PORT}`);
         });
     } catch (err: any) {
